@@ -48,6 +48,86 @@ export function Coffee({ children }: any) {
         price: 9.9,
         countCoffee: 0
     },
+    {
+        id: 4,
+        img: <img src={CoffeeTwo} alt="" />,
+        typeOne: 'Tradicional',
+        typeTwo: 'Gelado',
+        title: 'Expresso Gelado',
+        context: 'Bebida preparada com café expresso e cubos de gelo',
+        price: 9.9,
+        countCoffee: 0
+    },
+    {
+        id: 5,
+        img: <img src={CoffeeThree} alt="" />,
+        typeOne: 'Tradicional',
+        typeTwo: 'Com leite',
+        title: 'Café com Leite',
+        context: 'Meio a meio de expresso tradicional com leite vaporizado',
+        price: 9.9,
+        countCoffee: 0
+    },
+    {
+        id: 6,
+        img: <img src={CoffeeOne} alt="" />,
+        typeOne: 'Tradicional',
+        typeTwo: 'Com leite',
+        title: 'Latte',
+        context: 'Uma dose de café expresso com o dobro de leite e espuma cremosa',
+        price: 9.9,
+        countCoffee: 0
+    },
+    {
+        id: 7,
+        img: <img src={CoffeeTwo} alt="" />,
+        typeOne: 'Tradicional',
+        typeTwo: 'Com leite',
+        title: 'Capuccino',
+        context: 'Bebida com canela feita de doses iguais de café, leite e espuma',
+        price: 9.9,
+        countCoffee: 0
+    },    
+    {
+        id: 8,
+        img: <img src={CoffeeOne} alt="" />,
+        typeOne: 'Tradicional',
+        typeTwo: 'Com leite',
+        title: 'Macchiato',
+        context: 'Café expresso misturado com um pouco de leite quente e espuma',
+        price: 9.9,
+        countCoffee: 0
+    },
+    {
+        id: 9,
+        img: <img src={CoffeeThree} alt="" />,
+        typeOne: 'Tradicional',
+        typeTwo: 'Com leite',
+        title: 'Macchiato',
+        context: 'Café expresso com calda de chocolate, pouco leite e espuma',
+        price: 9.9,
+        countCoffee: 0
+    },
+    {
+        id: 10,
+        img: <img src={CoffeeTwo} alt="" />,
+        typeOne: 'Espcial',
+        typeTwo: 'Com leite',
+        title: 'Chocolate Quente',
+        context: 'Bebida feita com chocolate dissolvido no leite quente e café',
+        price: 9.9,
+        countCoffee: 0
+    },
+    {
+        id: 11,
+        img: <img src={CoffeeThree} alt="" />,
+        typeOne: 'Espcial',
+        typeTwo: 'Com leite',
+        title: 'Cubano',
+        context: 'Drink gelado de café expresso com rum, creme de leite e hortelã',
+        price: 9.9,
+        countCoffee: 0
+    },
     ];
     const [products, setProducts] = useState(listOfCoffees);
     const [totalPriceCoffee, setTotalPrice] = useState('');

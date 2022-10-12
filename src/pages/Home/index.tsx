@@ -17,7 +17,6 @@ export function Home() {
     return (
         <HomeArea>
             <img src={Intro} />
-            <Row xs={1} md={3} className="g-4">
                 <RowCardArea>
                     {products.map(coffee => {
                         return (
@@ -42,7 +41,7 @@ export function Home() {
                         )
                     })}
                 </RowCardArea>
-            </Row>
+          
         </HomeArea>
     )
 }

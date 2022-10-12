@@ -14,10 +14,11 @@ img{
 `;
 
 export const RowCardArea = styled.div`
-display: flex;
-gap: 15px;
-align-items: center;
-margin-left: 150px;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 2rem;
+margin: 0 auto;
+
 `;
 
 export const CardArea = styled.div`
