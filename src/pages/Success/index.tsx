@@ -6,7 +6,7 @@ import llustrationMoto from '../../assets/llustrationMoto.png'
 
 export function Success() {
 
-    const { clients }: any = useContext(CoffeeContext)
+    const { clients, paymentType }: any = useContext(CoffeeContext)
 
     return (
         <SuccessMainArea>
@@ -49,7 +49,7 @@ export function Success() {
                                             Pagamento na entrega:
                                         </div>
                                         <BoldText>
-                                            Cartão de crédito
+                                            {paymentType}
                                         </BoldText>
                                     </span>
                                 </SuccessContextClientArea>

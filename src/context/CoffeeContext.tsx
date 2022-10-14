@@ -132,6 +132,7 @@ export function Coffee({ children }: any) {
     const [products, setProducts] = useState(listOfCoffees);
     const [totalPriceCoffee, setTotalPrice] = useState('');
     const [finalPriceToPay, setFinalPriceToPay] = useState('');
+    
 
     function handleLessCoffee(event: any, id: any) {
         const updatedProducts: any = products.map(product => {
@@ -193,6 +194,12 @@ export function Coffee({ children }: any) {
     const { register, handleSubmit, watch, reset } = useForm()
     const firstDados: any = [];
     const [clients, setClient] = useState(firstDados)
+    const [paymentType, setPaymentType] = useState('');
+
+    function handlePayment (paymentType: any){
+        setPaymentType(paymentType)
+        console.log(paymentType)
+    }
 
     const cep = watch('cep')
     const rua = watch('rua')
@@ -214,7 +221,7 @@ export function Coffee({ children }: any) {
         setClient([...clients, newClient])
         reset()
     }
- 
+
     return (
 
         <CoffeeContext.Provider
@@ -238,6 +245,8 @@ export function Coffee({ children }: any) {
                 bairro,
                 cidade,
                 uf,
+                handlePayment,
+                paymentType
             }}>
             {children}
         </CoffeeContext.Provider>
