@@ -87,7 +87,7 @@ export function Coffee({ children }: any) {
         context: 'Bebida com canela feita de doses iguais de café, leite e espuma',
         price: 9.9,
         countCoffee: 0
-    },    
+    },
     {
         id: 8,
         img: <img src={CoffeeOne} alt="" />,
@@ -132,7 +132,7 @@ export function Coffee({ children }: any) {
     const [products, setProducts] = useState(listOfCoffees);
     const [totalPriceCoffee, setTotalPrice] = useState('');
     const [finalPriceToPay, setFinalPriceToPay] = useState('');
-    
+
 
     function handleLessCoffee(event: any, id: any) {
         const updatedProducts: any = products.map(product => {
@@ -147,8 +147,8 @@ export function Coffee({ children }: any) {
         });
         setProducts(updatedProducts);
 
-        const priceCoffee = parseFloat(updatedProducts.reduce((prevVal, elem) => prevVal - (elem.countCoffee * elem.price)*(-1), 0).toFixed(2))
-        const finalPrice =  priceCoffee + 3.5 
+        const priceCoffee = parseFloat(updatedProducts.reduce((prevVal, elem) => prevVal - (elem.countCoffee * elem.price) * (-1), 0).toFixed(2))
+        const finalPrice = priceCoffee + 3.5
         setTotalPrice(priceCoffee)
         setFinalPriceToPay(finalPrice)
     }
@@ -167,13 +167,13 @@ export function Coffee({ children }: any) {
         setProducts(updatedProducts);
 
         const priceCoffee = parseFloat(updatedProducts.reduce((prevVal, elem) => prevVal + (elem.countCoffee * elem.price), 0).toFixed(2))
-        const finalPrice =  priceCoffee + 3.5
+        const finalPrice = priceCoffee + 3.5
         setTotalPrice(priceCoffee)
         setFinalPriceToPay(finalPrice)
     }
 
     function handleDeleteCoffee(event: any, id: any) {
-    
+
         const updatedProducts: any = products.map(product => {
             if (product.id == id && product.countCoffee > 0) {
                 const updatedProduct = {
@@ -185,8 +185,8 @@ export function Coffee({ children }: any) {
             return product;
         });
         setProducts(updatedProducts);
-        const priceCoffee = parseFloat(updatedProducts.reduce((prevVal, elem) => prevVal - (elem.countCoffee * elem.price)*(-1), 0).toFixed(2))
-        const finalPrice =  priceCoffee + 3.5
+        const priceCoffee = parseFloat(updatedProducts.reduce((prevVal, elem) => prevVal - (elem.countCoffee * elem.price) * (-1), 0).toFixed(2))
+        const finalPrice = priceCoffee + 3.5
         setTotalPrice(priceCoffee)
         setFinalPriceToPay(finalPrice)
     }
@@ -195,12 +195,12 @@ export function Coffee({ children }: any) {
     const firstDados: any = [];
     const [clients, setClient] = useState(firstDados)
     const [paymentType, setPaymentType] = useState('');
-
-    function handlePayment (paymentType: any){
-        setPaymentType(paymentType)
-        console.log(paymentType)
-    }
-
+    /*
+        function handlePayment (paymentType: any){
+            setPaymentType(paymentType)
+            console.log(paymentType)
+        }
+    */
     const cep = watch('cep')
     const rua = watch('rua')
     const numero = watch('numero')
@@ -208,7 +208,9 @@ export function Coffee({ children }: any) {
     const cidade = watch('cidade')
     const uf = watch('uf')
 
-
+    function handleClick(event: any) {
+        setPaymentType(event.target.value)
+    }
     function handleCheckout(data: any) {
         const newClient = {
             cep: data.cep,
@@ -217,6 +219,7 @@ export function Coffee({ children }: any) {
             bairro: data.bairro,
             cidade: data.cidade,
             uf: data.uf,
+            payment: paymentType
         }
         setClient([...clients, newClient])
         reset()
@@ -245,8 +248,9 @@ export function Coffee({ children }: any) {
                 bairro,
                 cidade,
                 uf,
-                handlePayment,
-                paymentType
+                //handlePayment,
+                paymentType,
+                handleClick
             }}>
             {children}
         </CoffeeContext.Provider>

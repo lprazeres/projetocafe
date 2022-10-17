@@ -12,7 +12,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 export function Checkout() {
 
 
-    const { products, handleLessCoffee, handlePlusCoffee, totalPriceCoffee, handleDeleteCoffee, finalPriceToPay, handleSubmit, handleCheckout, register, clients, cep, rua, numero, bairro, cidade, uf, handlePayment }: any = useContext(CoffeeContext)
+    const { products, handleLessCoffee, handlePlusCoffee, totalPriceCoffee, handleDeleteCoffee, finalPriceToPay, handleSubmit, handleCheckout, register, clients, cep, rua, numero, bairro, cidade, uf, /*handlePayment,*/ handleClick }: any = useContext(CoffeeContext)
 
     const [buttonSubmit, setButtonSubmit] = useState(1);
 
@@ -82,11 +82,11 @@ export function Checkout() {
                                 </InputRow>
 
                                 <ButtonGroupPosition>
-                                    <ButtonGroup size="lg" className="mb-2">
+                                    <ButtonGroup size="lg" className="mb-2" onClick={handleClick}>
                                         <ButtonGroupArea>
-                                            <Button variant="secondary" onClick={() => handlePayment('Cartão de crédito')} size="lg"><CreditCard size={32} color="#050505" />Cartão de Crédito</Button>
-                                            <Button variant="secondary" onClick={() => handlePayment('Cartão de débito')} size="lg"><CreditCard size={32} color="#050505" />Cartão de Débito</Button>
-                                            <Button variant="secondary" onClick={() => handlePayment('Dinheiro')} size="lg"><Money size={32} color="#050505" />Dinheiro</Button>
+                                            <Button variant="secondary" value={'Cartão de crédito'} /*onClick={() => handlePayment('Cartão de crédito')}*/ size="lg"><CreditCard size={32} color="#050505" />Cartão de Crédito</Button>
+                                            <Button variant="secondary"  value={'Cartão de débito'} /*onClick={() => handlePayment('Cartão de débito')} */size="lg"><CreditCard size={32} color="#050505" />Cartão de Débito</Button>
+                                            <Button variant="secondary" value={'Dinheiro'} /*onClick={() => handlePayment('Dinheiro')}*/ size="lg"><Money size={32} color="#050505" />Dinheiro</Button>
                                         </ButtonGroupArea>
                                     </ButtonGroup>
                                 </ButtonGroupPosition>

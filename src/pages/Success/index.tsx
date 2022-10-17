@@ -49,7 +49,7 @@ export function Success() {
                                             Pagamento na entrega:
                                         </div>
                                         <BoldText>
-                                            {paymentType}
+                                            {client.payment}
                                         </BoldText>
                                     </span>
                                 </SuccessContextClientArea>
